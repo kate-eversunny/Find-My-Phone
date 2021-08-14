@@ -1,9 +1,9 @@
 package com.androidgang.findmyphone.models
 
+
 data class Device(
-    var idDevice: Int = 0,
-    var name: String = "",
-    var lastSeen: Long = 0L,
-    var longitude: Double = 0.0,
-    var latitude: Double = 0.0
+    var name: String = "", // Имя устройства
+    var userId: String = "", // Поле, по которому определяется уникальность устройства (еще не выбрано, что тут будет)
+    var metrics: MutableList<Metrics> = mutableListOf<Metrics>(),
+    var deviceId: String = "" // Якобы уникальный айди всех устройств на андроиде
 )
