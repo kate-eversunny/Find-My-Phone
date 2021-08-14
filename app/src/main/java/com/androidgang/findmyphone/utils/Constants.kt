@@ -4,7 +4,7 @@ import com.androidgang.findmyphone.models.Device
 import java.text.SimpleDateFormat
 
 object Constants {
-    val devices = listOf<Device>(
+    /*val devices = listOf<Device>(
         Device(idDevice = 1, name = "Xiaomi POCO M3", lastSeen = 1628898196L, latitude = (-90..90).random().toDouble(), longitude = (-180..180).random().toDouble()),
         Device(idDevice = 2, name = "Xiaomi POCO M2", lastSeen = 	1627776000L, latitude = (-90..90).random().toDouble(), longitude = (-180..180).random().toDouble()),
         Device(
@@ -46,7 +46,7 @@ object Constants {
             name = "Xiaomi Leti M6", lastSeen = 1627752147L,
             latitude = (-90..90).random().toDouble(), longitude = (-180..180).random().toDouble())
 
-    )
+    )*/
     val sdf = SimpleDateFormat("dd.MM.yyyy HH:mm")
 
 }
