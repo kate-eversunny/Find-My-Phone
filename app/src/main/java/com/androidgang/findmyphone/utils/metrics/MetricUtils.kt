@@ -17,7 +17,7 @@ interface MetricUtils {
         val metrics = Metrics()
         try {
             val telephonyManager = context.getSystemService(Context.TELEPHONY_SERVICE) as TelephonyManager
-            val cellLocation = telephonyManager.allCellInfo // Todo to request permissions later
+            val cellLocation = telephonyManager.allCellInfo
             val info = cellLocation.firstOrNull()
             when (info) {
                 is CellInfoLte -> {
