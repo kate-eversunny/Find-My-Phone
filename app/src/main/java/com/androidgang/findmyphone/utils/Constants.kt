@@ -1,52 +1,40 @@
 package com.androidgang.findmyphone.utils
 
 import com.androidgang.findmyphone.models.Device
+import com.androidgang.findmyphone.models.Metrics
 import java.text.SimpleDateFormat
 
 object Constants {
-    /*val devices = listOf<Device>(
-        Device(idDevice = 1, name = "Xiaomi POCO M3", lastSeen = 1628898196L, latitude = (-90..90).random().toDouble(), longitude = (-180..180).random().toDouble()),
-        Device(idDevice = 2, name = "Xiaomi POCO M2", lastSeen = 	1627776000L, latitude = (-90..90).random().toDouble(), longitude = (-180..180).random().toDouble()),
-        Device(
-            idDevice = 3, name = "Xiaomi POCO M1",
-            lastSeen = 1630454399L, latitude = (-90..90).random().toDouble(), longitude = (-180..180).random().toDouble()),
-        Device(
-            idDevice = 4, name = "Samsung A51",
-            lastSeen = 1627777000L,
-            latitude = (-90..90).random().toDouble(), longitude = (-180..180).random().toDouble()),
-        Device(
-            idDevice = 5,
-            name = "Samsung A52", lastSeen = 1627766000L,
-            latitude = (-90..90).random().toDouble(), longitude = (-180..180).random().toDouble()),
-        Device(
-            idDevice = 6, name = "Samsung A3",
-            lastSeen = 1627777896L,
-            latitude = (-90..90).random().toDouble(), longitude = (-180..180).random().toDouble()),
-        Device(
-            idDevice = 7, name = "Samsung S21",
-            lastSeen = 1627777412L,
-            latitude = (-90..90).random().toDouble(), longitude = (-180..180).random().toDouble()),
-        Device(
-            idDevice = 8, name = "Razor V2", lastSeen = 1627771236L,
-            latitude = (-90..90).random().toDouble(), longitude = (-180..180).random().toDouble()),
-        Device(
-            idDevice = 9, name = "Asus Zenfone Max pro m1",
-            lastSeen = 1627771234L,
-            latitude = (-90..90).random().toDouble(), longitude = (-180..180).random().toDouble()),
-        Device(
-            idDevice = 10,
-            name = "Xiaomi Leti M4", lastSeen = 1627779000L,
-            latitude = (-90..90).random().toDouble(), longitude = (-180..180).random().toDouble()),
-        Device(
-            idDevice = 11,
-            name = "Xiaomi Leti M5", lastSeen = 1627766000L,
-            latitude = (-90..90).random().toDouble(), longitude = (-180..180).random().toDouble()),
-        Device(
-            idDevice = 12,
-            name = "Xiaomi Leti M6", lastSeen = 1627752147L,
-            latitude = (-90..90).random().toDouble(), longitude = (-180..180).random().toDouble())
+    const val BASE_URL = "http://89.22.187.96:33080/"
+    const val APPLICATION_JSON_TYPE = "application/json"
 
-    )*/
+    val metrics1 = arrayListOf(
+        Metrics(longitude = (-90..90).random().toDouble(), latitude = (-90..90).random().toDouble(), time = 1629011598L, cellId = "example", lac = "example", rsrp = "example", rsrq = "example", sinr = "example", imsi = "example"),
+        Metrics(longitude = (-90..90).random().toDouble(), latitude = (-90..90).random().toDouble(), time = 1629011588L, cellId = "example", lac = "example", rsrp = "example", rsrq = "example", sinr = "example", imsi = "example"),
+        Metrics(longitude = (-90..90).random().toDouble(), latitude = (-90..90).random().toDouble(), time = 1629011578L, cellId = "example", lac = "example", rsrp = "example", rsrq = "example", sinr = "example", imsi = "example"),
+        Metrics(longitude = (-90..90).random().toDouble(), latitude = (-90..90).random().toDouble(), time = 1629011568L, cellId = "example", lac = "example", rsrp = "example", rsrq = "example", sinr = "example", imsi = "example")
+    )
+    val metrics2 = arrayListOf(
+        Metrics(longitude = (-90..90).random().toDouble(), latitude = (-90..90).random().toDouble(), time = 1629011598L, cellId = "example", lac = "example", rsrp = "example", rsrq = "example", sinr = "example", imsi = "example"),
+        Metrics(longitude = (-90..90).random().toDouble(), latitude = (-90..90).random().toDouble(), time = 1629011588L, cellId = "example", lac = "example", rsrp = "example", rsrq = "example", sinr = "example", imsi = "example"),
+        Metrics(longitude = (-90..90).random().toDouble(), latitude = (-90..90).random().toDouble(), time = 1629011578L, cellId = "example", lac = "example", rsrp = "example", rsrq = "example", sinr = "example", imsi = "example"),
+        Metrics(longitude = (-90..90).random().toDouble(), latitude = (-90..90).random().toDouble(), time = 1629011568L, cellId = "example", lac = "example", rsrp = "example", rsrq = "example", sinr = "example", imsi = "example")
+    )
+    val metrics3 = arrayListOf(
+        Metrics(longitude = (-90..90).random().toDouble(), latitude = (-90..90).random().toDouble(), time = 1629011598L, cellId = "example", lac = "example", rsrp = "example", rsrq = "example", sinr = "example", imsi = "example"),
+        Metrics(longitude = (-90..90).random().toDouble(), latitude = (-90..90).random().toDouble(), time = 1629011588L, cellId = "example", lac = "example", rsrp = "example", rsrq = "example", sinr = "example", imsi = "example"),
+        Metrics(longitude = (-90..90).random().toDouble(), latitude = (-90..90).random().toDouble(), time = 1629011578L, cellId = "example", lac = "example", rsrp = "example", rsrq = "example", sinr = "example", imsi = "example"),
+        Metrics(longitude = (-90..90).random().toDouble(), latitude = (-90..90).random().toDouble(), time = 1629011568L, cellId = "example", lac = "example", rsrp = "example", rsrq = "example", sinr = "example", imsi = "example")
+    )
+
+    val devices = arrayListOf(
+        Device(name = "Xiaomi POCO M3", userId = "Example", metrics = metrics1, deviceId = "Example"),
+        Device(name = "Honor 9C", userId = "Example", metrics =metrics2,  deviceId ="Example"),
+        Device(name = "Asus M10", userId = "Example", metrics =metrics3,  deviceId ="Example"),
+    )
+
+
     val sdf = SimpleDateFormat("dd.MM.yyyy HH:mm")
+
 
 }

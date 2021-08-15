@@ -9,7 +9,7 @@ import com.androidgang.findmyphone.databinding.ActivityMainBinding
 import com.androidgang.findmyphone.utils.NetworkService
 import com.androidgang.findmyphone.utils.metrics.MetricUtils
 
-class MainActivity : AppCompatActivity(), NetworkService, MetricUtils {
+class MainActivity : AppCompatActivity() {
 
     private val multiPermissionCallback =
         registerForActivityResult(ActivityResultContracts.RequestMultiplePermissions()) { map ->
@@ -27,9 +27,12 @@ class MainActivity : AppCompatActivity(), NetworkService, MetricUtils {
         multiPermissionCallback.launch(
             arrayOf(
                 Manifest.permission.ACCESS_FINE_LOCATION,
+                Manifest.permission.ACCESS_BACKGROUND_LOCATION,
                 Manifest.permission.ACCESS_COARSE_LOCATION,
                 Manifest.permission.READ_PHONE_STATE,
-                Manifest.permission.ACCESS_NETWORK_STATE
+                Manifest.permission.ACCESS_NETWORK_STATE,
+                Manifest.permission.INTERNET,
+                Manifest.permission.ACCESS_WIFI_STATE
             )
         )
     }
