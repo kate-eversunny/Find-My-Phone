@@ -1,20 +1,14 @@
 package com.androidgang.findmyphone.fragments
 
-import android.Manifest
-import android.content.pm.PackageManager
-import android.graphics.Color
-import android.location.Location
 import androidx.fragment.app.Fragment
 
 import android.os.Bundle
-import android.os.Looper
-import android.provider.ContactsContract
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.core.app.ActivityCompat
+import androidx.core.os.bundleOf
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.androidgang.findmydevice.adapters.BaseAdapterCallback
@@ -25,30 +19,30 @@ import com.androidgang.findmyphone.adapters.SpacingItemDecoration
 import com.androidgang.findmyphone.databinding.FragmentMapsBinding
 import com.androidgang.findmyphone.models.Device
 import com.androidgang.findmyphone.models.User
-import com.androidgang.findmyphone.utils.Constants
 import com.androidgang.findmyphone.utils.Constants.sdf
 import com.androidgang.findmyphone.utils.NetworkService
-import com.google.android.gms.location.*
 
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.CameraPosition
-import com.google.android.gms.maps.model.CircleOptions
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
+import kotlinx.coroutines.*
+import java.lang.Exception
 import java.util.*
 
 class MapsFragment : Fragment(), View.OnClickListener {
 
     private var _binding: FragmentMapsBinding? = null
     private val binding get() = _binding!!
-    private var user: User? = null
+    var user: User? = null
 
+    companion object{
+        fun setMetrics(longitude: Double, latitude: Double) {
+
+        }
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -59,7 +53,7 @@ class MapsFragment : Fragment(), View.OnClickListener {
             withContext(Dispatchers.IO){
                 val locationTracker = LocationTracker(requireContext())
                 for(i in 1..50){
-                    locationTracker.updateGps()
+                    locationTracker.updateGps(user)
                     Log.i("AAAAA", "AAAAA")
 
                     delay(2000)

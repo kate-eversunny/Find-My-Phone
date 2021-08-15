@@ -19,10 +19,12 @@ interface NetworkService {
     @GET("{email}/{deviceId}")
     suspend fun getUserDevice(@Path("email") email: String, @Path("deviceId")deviceId: String) : Metrics?
 
+    @GET("{email}/{deviceId}")
+    suspend fun postDevice(@Path("email") email: String, @Path("deviceId")deviceId: String) : Metrics?
 
 
     @POST("{email}")
-    suspend fun postUser(@Path("email") email: String, @Body device: Device)
+    suspend fun postMetric(@Path("email") email: String, @Body device: Device)
 
 
     @POST(".")
